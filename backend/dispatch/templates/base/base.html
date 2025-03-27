@@ -11,7 +11,6 @@
 <body>
     
     {% include "base/navbar.html" %}
-    {% if user.is_authenticated %}
     {% include "base/sidebar.html" %}
         
         <!-- Main Content -->
@@ -25,9 +24,6 @@
             </div>
         </div>
 
-    {% else %}
-        <h1>Not Authenticated</h1>
-    {% endif %}        
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
