@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    
+    {% include "base/navbar.html" %}
+    {% if user.is_authenticated %}
+    {% include "base/sidebar.html" %}
+        
+        <!-- Main Content -->
+        <div class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
+            <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64 p-10">
+                
+            
+                {% block template %}
+                {% endblock  %}
+            
+            </div>
+        </div>
+
+    {% else %}
+        <h1>Not Authenticated</h1>
+    {% endif %}        
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
+
+
+</body>
+</html>
